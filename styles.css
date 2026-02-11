@@ -1,18 +1,19 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   background-color: whitesmoke;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
-
 
 .snowflake {
   color: #fff;
@@ -137,395 +138,473 @@ body {
 
 .snowflake:nth-of-type(7) {
   left: 70%;
-  -webkit-animation-delay: https: //proxy.everskies.com/a/https://proxy.everskies.com/a/2.5s,1s;animation-delay:https://proxy.everskies.com/a/https://proxy.everskies.com/a/2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,https://proxy.everskies.com/a/https://proxy.everskies.com/a/1.5s;animation-delay:3s,https://proxy.everskies.com/a/https://proxy.everskies.com/a/1.5s}
+  -webkit-animation-delay: 2.5s, 1s;
+  animation-delay: 2.5s, 1s
+}
 
-    .snowflake:nth-of-type(8) {
-    left: 70%;
-    -webkit-animation-delay: https: //proxy.everskies.com/a/https://proxy.everskies.com/a/2.5s,1s;animation-delay:https://proxy.everskies.com/a/https://proxy.everskies.com/a/2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,https://proxy.everskies.com/a/https://proxy.everskies.com/a/1.5s;animation-delay:3s,https://proxy.everskies.com/a/https://proxy.everskies.com/a/1.5s}
+.snowflake:nth-of-type(8) {
+  left: 80%;
+  -webkit-animation-delay: 1s, 0s;
+  animation-delay: 1s, 0s
+}
 
+.snowflake:nth-of-type(9) {
+  left: 90%;
+  -webkit-animation-delay: 3s, 1.5s;
+  animation-delay: 3s, 1.5s
+}
 
+.letter {
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  padding: clamp(20px, 5vw, 35px);
+  width: min(90vw, 600px);
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
 
-      .letter {
-      display: flex;
-      flex-direction: column;
-      border-radius: 18px;
-      padding: 35px;
-      width: 50vw;
-      height: auto;
-      justify-content: center;
-      align-items: center;
+#letter-img {
+  width: min(300px, 80vw);
+  height: min(300px, 80vw);
+  aspect-ratio: 1;
+  cursor: url("magnifying_glass.ico"), auto;
+  background-image: url("valentine.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: 0.8s ease-in-out;
+}
 
-    }
+#letter-img:hover {
+  background-image: url("cat\ cheeks.jpg");
+  transition: 0.8s ease-in-out;
+}
 
-    #letter-img {
-      width: 300px;
-      height: 300px;
-      cursor: url("magnifying_glass.ico"), auto;
-      background-image: url("valentine.jpg");
-      background-size: cover;
-      transition: 0.8s ease-in-out;
-    }
+#valentine {
+  width: min(12rem, 70vw);
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
 
-    #letter-img:hover {
-      background-image: url("cat\ cheeks.jpg");
-      transition: 0.8s ease-in-out;
-    }
+#question {
+  font-family: "Crafty Girls", cursive;
+  color: red;
+  text-align: center;
+  margin-top: clamp(20px, 5vh, 45px);
+  padding: 10px;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
 
-    #valentine {
-      width: 12rem;
-      height: auto;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(20px, 8vw, 50px);
+  width: 100%;
+  flex-wrap: wrap;
+}
 
+.btn {
+  font-family: "Pixelify Sans", sans-serif;
+  background-color: #940018;
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: clamp(18px, 4vw, 25px);
+  width: clamp(100px, 20vw, 120px);
+  height: clamp(40px, 8vh, 50px);
+  margin-top: 15px;
+  transition: all 0.20s ease;
+  transform: rotate(0deg);
+}
 
+.btn-yes:hover {
+  scale: 1.17;
+  transform: rotate(-3deg);
+}
 
-    #question {
-      font-family: "Crafty Girls", cursive;
-      color: red;
-      text-align: center;
-      margin-top: 45px;
-      padding: 10px;
-    }
+.no-wrapper {
+  position: relative;
+  width: clamp(100px, 20vw, 120px);
+  height: clamp(50px, 10vh, 60px);
+  overflow: visible;
+}
 
-    .buttons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 50px;
-      width: 100%;
-    }
+.btn-no {
+  cursor: default;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.4s ease;
+}
 
-    .btn {
-      font-family: "Pixelify Sans", sans-serif;
-      background-color: #940018;
-      cursor: pointer;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 25px;
-      width: 120px;
-      height: 50px;
-      margin-top: 15px;
-      transition: all 0.20s ease;
-      transform: rotate(0deg);
-    }
+.chocolate-screen {
+  display: none;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: whitesmoke;
+  align-items: center;
+  padding: clamp(20px, 3vh, 30px) 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 
-    .btn-yes:hover {
-      scale: 1.17;
-      transform: rotate(-3deg);
-    }
+.chocolate-screen h1 {
+  font-family: "Crafty Girls", cursive;
+  color: #c4002f;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  margin-bottom: 20px;
+}
 
-    .no-wrapper {
-      position: relative;
-      width: 120px;
-      height: 60px;
-      overflow: visible;
-    }
+.chocolates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+  gap: clamp(10px, 3vw, 15px);
+  justify-items: center;
+  align-items: center;
+  max-width: min(600px, 90vw);
+  margin-bottom: auto;
+  width: 100%;
+  padding: 10px;
+}
 
-    .btn-no {
-      cursor: default;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: all 0.4s ease;
-    }
+.chocolate {
+  width: 60%;
+  max-width: 200px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
 
-    .chocolate-screen {
-      display: none;
-      flex-direction: column;
-      height: 100vh;
-      width: 100vw;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: whitesmoke;
-      align-items: center;
-      padding-top: 30px 20px;
-    }
+.chocolate:hover {
+  transform: scale(1.15);
+}
 
-    .chocolate-screen h1 {
-      font-family: "Crafty Girls", cursive;
-      color: #c4002f;
-    }
+.btn-flowers {
+  display: none;
+  font-family: "Pixelify Sans", sans-serif;
+  background-color: #940018;
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  height: clamp(40px, 8vh, 45px);
+  padding: 10px 20px;
+  font-size: clamp(15px, 3vw, 17px);
+  margin-top: 20px;
+}
 
-    .chocolates {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      justify-items: center;
-      align-items: center;
-      max-width: 600px;
-      margin-bottom: auto;
-      width: 100%;
-    }
+.basket {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-    .chocolate {
-      width: 60%;
-      max-width: 200px;
-      cursor: pointer;
-      transition: transform 0.2s ease;
+.basket-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 10px);
+  flex-wrap: wrap;
+}
 
-    }
+.basket-counter {
+  font-family: "Crafty Girls", cursive;
+  color: #c4002f;
+  background: #fff0f5;
+  border: 2px solid #c4002f;
+  border-radius: 50%;
+  width: clamp(30px, 6vw, 35px);
+  height: clamp(30px, 6vw, 35px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(16px, 3vw, 18px);
+  font-weight: bold;
+}
 
-    .chocolate:hover {
-      transform: scale(1.15);
-    }
+.basket-img {
+  width: 70%;
+  max-width: min(350px, 80vw);
+  pointer-events: none;
+  margin: 0;
+}
 
-    .btn-flowers {
-      display: none;
-      font-family: "Pixelify Sans", sans-serif;
-      background-color: #940018;
-      cursor: pointer;
-      color: white;
-      border: none;
-      border-radius: 3px;
-      height: 45px;
-      padding: 10px;
-      font-size: 17px;
-    }
+.basket p {
+  font-family: "Crafty Girls", cursive;
+  font-size: clamp(18px, 4vw, 23px);
+  text-align: center;
+  padding: 0 10px;
+}
 
-    .basket {
-      box-sizing: border-box;
-      width: 100%;
-      padding: 20px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 0;
-      content: contain;
-    }
+.flower-screen {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  padding: clamp(20px, 3vh, 30px) 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 
-    .basket-inner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      /* spacing between basket and counter */
-    }
+.flower-screen h1 {
+  font-family: "Crafty Girls", cursive;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  margin-bottom: clamp(30px, 8vh, 70px);
+  color: #c4002f;
+  text-align: center;
+}
 
-    .basket-counter {
-      font-family: "Crafty Girls", cursive;
-      color: #c4002f;
-      background: #fff0f5;
-      border: 2px solid #c4002f;
-      border-radius: 50%;
-      width: 35px;
-      height: 35px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 18px;
-      font-weight: bold;
-    }
+.bouquets {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(min(120px, 100%), 1fr));
+  gap: clamp(15px, 4vw, 20px);
+  justify-content: center;
+  align-items: center;
+  max-width: min(600px, 90vw);
+  padding: 10px;
+}
 
-    .basket-img {
-      width: 70%;
-      max-width: 350px;
-      pointer-events: none;
-      margin: 0;
-    }
+.flower {
+  width: 100%;
+  max-width: 150px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
 
-    .basket p {
-      font-family: "Crafty Girls", cursive;
-      font-size: 23px;
-    }
+.flower:hover {
+  transform: scale(1.12);
+}
 
-    .flower-screen {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      width: 100vw;
-      padding-top: 30px;
-    }
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 10000;
+}
 
-    .flower-screen h1 {
-      font-family: "Crafty Girls", cursive;
-      font-size: 25px;
-      margin-bottom: 70px;
-      color: #c4002f;
-    }
+.popup-content {
+  background: #fff5f8;
+  border-radius: 12px;
+  padding: clamp(20px, 5vw, 25px);
+  text-align: center;
+  max-width: min(400px, 90vw);
+  width: 100%;
+}
 
-    .bouquets {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-    }
+.popup-content h2 {
+  color: #c4002f;
+  font-family: "Crafty Girls", cursive;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+}
 
-    .flower {
-      width: 150px;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
+.popup-content p {
+  font-size: clamp(16px, 3vw, 18px);
+  font-family: "Crafty Girls", cursive;
+  margin: 15px 0;
+}
 
-    .flower:hover {
-      transform: scale(1.12);
-    }
+.popup-content button {
+  background-color: #940018;
+  color: white;
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: clamp(16px, 3vw, 18px);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-    .popup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      justify-content: center;
-      align-items: center;
-    }
+.hidden-screen {
+  display: none;
+  position: fixed;
+  inset: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(20px, 3vh, 30px) 20px;
+  text-align: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 
-    .popup-content {
-      background: #fff5f8;
-      border-radius: 12px;
-      padding: 25px;
-      text-align: center;
-      max-width: 400px;
-    }
+.hidden-screen h2 {
+  color: #c4002f;
+  font-family: "Crafty Girls", cursive;
+  margin-bottom: clamp(20px, 3vh, 30px);
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  flex-shrink: 0;
+}
 
-    .popup-content h2 {
-      color: #c4002f;
-      font-family: "Crafty Girls", cursive;
-    }
+.hidden-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: clamp(15px, 2vw, 20px);
+  width: 90%;
+  max-width: min(650px, 95vw);
+  padding: 10px;
+}
 
-    .popup-content p {
-      font-size: 18px;
-      font-family: "Crafty Girls", cursive;
-      margin: 15px 0;
-    }
+.hidden-card {
+  aspect-ratio: 1.4 / 1;
+  min-height: 100px;
+  border-radius: 15px;
+  background: transparent;
+  border: 2px dashed transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
 
-    .popup-content button {
-      background-color: #940018;
-      color: white;
-      font-family: "Pixelify Sans", sans-serif;
-      font-size: 18px;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
+.hidden-card:hover {
+  border-color: #ffb6c1;
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.6);
+  cursor: url("heart-cursor.png"), pointer;
+}
 
-    .hidden-screen {
-      display: none;
-      position: fixed;
-      inset: 0;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-top: 40px;
-      text-align: center;
-    }
+.hidden-card.revealed {
+  background: #fff0f5;
+  border: 2px solid #c4002f;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  cursor: default;
+}
 
-    .hidden-screen h2 {
-      color: #c4002f;
-      font-family: "Crafty Girls", cursive;
-      margin-bottom: 30px;
-    }
+.hidden-card.revealed::after {
+  content: attr(data-msg);
+  font-family: "Crafty Girls", cursive;
+  color: #c4002f;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(10px, 2vw, 15px);
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+  font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
 
-    .hidden-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      width: 90%;
-      max-width: 600px;
-    }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
 
-    .hidden-card {
-      height: 140px;
-      border-radius: 15px;
-      background: transparent;
-      border: 2px dashed transparent;
-      cursor: pointer;
-      position: relative;
-      transition: all 0.3s ease;
-    }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
-    /* Hover hint */
-    .hidden-card:hover {
-      border-color: #ffb6c1;
-      box-shadow: 0 0 15px rgba(255, 182, 193, 0.6);
-      cursor: url("heart-cursor.png"), pointer;
-      /* optional */
-    }
+.final-msg {
+  min-height: 100vh;
+  width: 100vw;
+  display: none;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: clamp(20px, 3vh, 30px) 20px;
+}
 
-    .hidden-card.revealed {
-      background: #fff0f5;
-      border: 2px solid #c4002f;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-      cursor: default;
-    }
+.final-title {
+  width: 100%;
+  text-align: center;
+  font-family: "Crafty Girls", cursive;
+  color: #c4002f;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  padding: 0 20px clamp(30px, 8vh, 60px) 20px;
+  flex-shrink: 0;
+}
 
-    .hidden-card.revealed::after {
-      content: attr(data-msg);
-      font-family: "Crafty Girls", cursive;
-      color: #c4002f;
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px;
-      text-align: center;
-      animation: fadeIn 0.4s ease;
-    }
+.final-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  gap: clamp(15px, 3vh, 25px);
+}
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
+.final-msg h2 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  color: #c4002f;
+  font-family: "Crafty Girls", cursive;
+  margin: 0;
+}
 
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+.final-msg .happy-cat {
+  width: min(250px, 70vw);
+  max-width: 80%;
+  margin-bottom: 20px;
+  animation: bounce 1.2s ease infinite;
+}
 
-    .final-msg {
-      height: 100vh;
-      width: 100vw;
-      position: relative;
-      display: none;
-      justify-content: center;
-    }
+.final-msg p {
+  font-size: clamp(1rem, 4vw, 1.25rem);
+  font-family: "Crafty Girls", cursive;
+}
 
-    .final-title {
-      position: absolute;
-      top: 30px;
-      width: 100%;
-      text-align: center;
-      font-family: "Crafty Girls", cursive;
-      color: #c4002f;
-    }
+@keyframes bounce {
 
-    .final-content {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
 
-    .final-msg h2 {
-      font-size: 30px;
-      color: #c4002f;
-      font-family: "Crafty Girls", cursive;
-    }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
-    .final-msg .happy-cat {
-      width: 250px;
-      max-width: 80%;
-      margin-bottom: 20px;
-      animation: bounce 1.2s ease infinite;
-    }
+/* Responsive adjustments for very small screens */
+@media (max-width: 480px) {
 
-    .final-msg p {
-      font-size: 20px;
-      font-family: "Crafty Girls", cursive;
-    }
+  .chocolates,
+  .bouquets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hidden-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(10px, 2vw, 15px);
+  }
+
+  .hidden-card.revealed::after {
+    font-size: clamp(0.65rem, 2vw, 0.85rem);
+    padding: clamp(8px, 1.5vw, 12px);
+  }
+}
+
+/* Prevent layout shift on zoom */
+@media (min-resolution: 1.5dppx) {
+  body {
+    font-size: 16px;
+  }
+}
