@@ -173,12 +173,12 @@ body {
   background-image: url("valentine.jpg");
   background-size: cover;
   background-position: center;
-  transition: 0.8s ease-in-out;
+
 }
 
 #letter-img:hover {
   background-image: url("cat\ cheeks.jpg");
-  transition: 0.8s ease-in-out;
+
 }
 
 #valentine {
